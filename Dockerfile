@@ -12,8 +12,4 @@ FROM node:10-alpine
 
 COPY --from=builder /app .
 
-ARG port=1234
-
-ENV PORT=${port}
-
 CMD [ "node", "build/app.js"]
