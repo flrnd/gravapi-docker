@@ -1,6 +1,6 @@
 {
   "name": "gravatarapi",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Create a maintainable, production ready web application that provides an API endpoint for transforming email addresses into gravatar uris",
   "main": "app.js",
   "license": "MIT",
@@ -10,9 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "commander": "^3.0.1",
     "email-validator": "^2.0.4",
-    "express": "^4.17.1",
-    "yargs": "^14.0.0"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.6.0",
     "jest": "^24.9.0",
     "rollup": "^1.21.4",
+    "rollup-plugin-json": "^4.0.0",
     "supertest": "^4.0.2"
   },
   "jest": {
