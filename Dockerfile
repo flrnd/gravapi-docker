@@ -1,26 +1,19 @@
 FROM node:10-alpine as builder
 
-COPY . /home/node/app
+WORKDIR /app
 
-WORKDIR /home/node/app
+COPY . /app
 
-RUN chown -R node:node /home/node/app
-
-RUN npm install && npm run build
+RUN npm install && \
+    npm run build
 
 # second stage
 FROM node:10-alpine
 
-COPY --from=builder /home/node/app/node_modules node_modules
-
-COPY --from=builder /home/node/app/build/app.js app.js
+COPY --from=builder /app .
 
 ARG port=1234
 
-ARG NODE_ENV=production
+ENV PORT=${port}
 
-ENV NODE_ENV=${NODE_ENV} PORT=${port}
-
-EXPOSE ${port}
-
-CMD [ "node", "app.js"]
+CMD [ "node", "build/app.js"]
