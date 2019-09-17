@@ -1,6 +1,6 @@
 {
   "name": "gravatarapi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create a maintainable, production ready web application that provides an API endpoint for transforming email addresses into gravatar uris",
   "main": "app.js",
   "license": "MIT",
