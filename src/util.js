@@ -14,7 +14,7 @@ export const printHelp = () => {
   console.log('');
   console.log('Examples:');
   console.log(
-    '  $ export PORT=1337 && gravapi-cli   use env variable PORT         ',
+    '  $ PORT=1337 gravapi-cli             use env variable PORT         ',
   );
   console.log(
     `  $ gravapi-cli -s                    use default port: ${defaultPort}`,

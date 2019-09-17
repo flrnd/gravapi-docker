@@ -5,9 +5,9 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "devel": "babel-node -- ./src/cli.js",
     "build": "rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "start": "yarn run build && node build/app.js"
   },
   "dependencies": {
     "commander": "^3.0.1",
