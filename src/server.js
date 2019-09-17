@@ -18,7 +18,7 @@ program.option(
   value => {
     return parseInt(value);
   },
-  1234,
+  defaultPort,
 );
 
 program.on('--help', () => {
@@ -28,7 +28,7 @@ program.on('--help', () => {
     '    $ node build/start.js          try to bind the server using the env PORT variable',
   );
   console.log(
-    '    $ node build/start.js -s       bind the server to the default port: 1234',
+    `    $ node build/start.js -s       bind the server to the default port: ${defaultPort}`,
   );
   console.log(
     '    $ node build/start.js -s 4321  bind the server to custom port: 4321',
@@ -37,8 +37,10 @@ program.on('--help', () => {
 
 program.parse(process.argv);
 
-process.env.PORT !== undefined
-  ? startServer(process.env.PORT)
-  : console.log('-h for more info');
+if (process.argv.length < 3) {
+  process.env.PORT !== undefined
+    ? startServer(process.env.PORT)
+    : console.log('-h for more info');
+}
 
-//    port !== undefined ? startServer(port) : startServer(defaultPort);
+startServer(program.port);
