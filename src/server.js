@@ -40,5 +40,5 @@ program.parse(process.argv);
 if (process.argv.length < 3) {
   process.env.PORT !== undefined
     ? startServer(process.env.PORT)
-    : console.log('-h for more info');
+    : console.log('try -h for more info');
 } else startServer(program.port);
