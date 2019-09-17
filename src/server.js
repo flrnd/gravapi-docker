@@ -1,19 +1,22 @@
-import argv from 'yargs';
+import program from 'commander';
+import { version } from '../package.json';
 import app from './app';
 
-let PORT = 5000;
-const options = argv.usage('Usage: -p <PORT>').option('p', {
-  alias: 'port',
-  describe: 'server listening port',
-  type: 'integer',
-  demandOption: false,
-}).argv;
+const defaultPort = 1234;
 
-// Check if env variable PORT is defined
-// to run the server on that port instead of
-// the default port.
-options.port ? (PORT = options.port) : (PORT = process.env.PORT);
+const startServer = port => {
+  app.listen(port, () => {
+    console.log(`server running on port ${port}`);
+  });
+};
 
-app.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`);
-});
+program
+  .version(version)
+  .command('serve [port]')
+  .alias('s')
+  .description('start the server.')
+  .action(port => {
+    port !== undefined ? startServer(port) : startServer(defaultPort);
+  });
+
+program.parse(process.argv);
