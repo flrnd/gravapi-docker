@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "devel": "babel-node -- ./src/server.js",
+    "build": "rollup -c",
     "test": "jest"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "@babel/node": "^7.6.1",
     "@babel/preset-env": "^7.6.0",
     "jest": "^24.9.0",
+    "rollup": "^1.21.4",
     "supertest": "^4.0.2"
   },
   "jest": {
