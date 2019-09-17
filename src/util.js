@@ -13,13 +13,3 @@ const hashedMail = email =>
     .createHash('md5')
     .update(email)
     .digest('hex');
-
-export const parseArgs = args => {
-  switch (args[1]) {
-    case '-p':
-      console.log(`arg ${args[1]}`);
-      break;
-    default:
-      console.log('default message');
-  }
-};
