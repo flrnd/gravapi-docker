@@ -1,11 +1,11 @@
 {
   "name": "gravatarapi",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Create a maintainable, production ready web application that provides an API endpoint for transforming email addresses into gravatar uris",
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "devel": "babel-node -- ./src/server.js",
+    "devel": "babel-node -- ./src/cli.js",
     "build": "rollup -c",
     "test": "jest"
   },

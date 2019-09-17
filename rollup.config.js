@@ -1,11 +1,11 @@
 import json from 'rollup-plugin-json';
 
 export default {
-  input: './src/server.js',
+  input: './src/cli.js',
   output: {
-    file: './build/start.js',
+    file: './build/cli.js',
     format: 'cjs',
-    name: 'start',
+    name: 'gravapi-cli',
   },
   plugins: [
     json({
