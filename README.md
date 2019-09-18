@@ -2,4 +2,16 @@
 
 Maintainable, production ready web application that provides an API endpoint for transforming email addresses into gravatar uris.
 
-Check <https://github.com/flrnprz/gravapi>
+Non docker version at <https://github.com/flrnprz/gravapi>
+
+## About this repo
+
+This app was developed for learning purposes, inspired in: <https://github.com/honeypotio/challenge/blob/master/tasks/be_001.md>
+
+### Stack
+
+* Node and Express.
+* Babel.
+* Rollup.
+* Jest and Supertest.
+* Docker.
