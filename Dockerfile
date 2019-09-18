@@ -1,10 +1,12 @@
 FROM node:10-alpine
 
+COPY . /app
+
 WORKDIR /app
 
-COPY package*.json rollup.config.js /app/
-
-RUN npm ci --only=production && \
-    npm run build
+RUN npm i -g rollup && \
+    npm ci --only=production && \
+    npm run build && \
+    npm uninstall -g rollup
 
 CMD [ "node", "build/app.js"]
