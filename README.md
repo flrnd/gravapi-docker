@@ -11,7 +11,6 @@ This app was developed for learning purposes, inspired in: <https://github.com/h
 ### Stack
 
 * Node and Express.
-* Babel.
 * Rollup.
 * Jest and Supertest.
 * Docker.
