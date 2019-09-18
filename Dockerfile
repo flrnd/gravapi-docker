@@ -1,12 +1,12 @@
+FROM node:10-alpine AS builder
+
+COPY . .
+
+RUN npm install && \
+    npm run build
+
 FROM node:10-alpine
 
-COPY . /app
+COPY --from=builder build/app.js .
 
-WORKDIR /app
-
-RUN npm i -g rollup && \
-    npm ci --only=production && \
-    npm run build && \
-    npm uninstall -g rollup
-
-CMD [ "node", "build/app.js"]
+CMD [ "node", "app.js"]

@@ -2,10 +2,8 @@ node_modules
 npm-debug.log
 Dockerfile
 .dockerignore
-.babelrc
 .git
 .gitignore
 LICENSE
 .prettierrc
 README.md
-yarn.lock
