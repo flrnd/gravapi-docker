@@ -1,15 +1,10 @@
-FROM node:10-alpine as builder
+FROM node:10-alpine
 
 WORKDIR /app
 
-COPY . /app
+COPY package*.json rollup.config.js /app/
 
-RUN npm install && \
+RUN npm ci --only=production && \
     npm run build
-
-# second stage
-FROM node:10-alpine
-
-COPY --from=builder /app .
 
 CMD [ "node", "build/app.js"]
