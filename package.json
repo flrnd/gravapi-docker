@@ -11,20 +11,15 @@
   },
   "dependencies": {
     "email-validator": "^2.0.4",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "rollup-plugin-terser": "^5.1.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.6.1",
-    "@babel/preset-env": "^7.6.0",
     "jest": "^24.9.0",
     "rollup": "^1.21.4",
-    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-uglify": "^6.0.3",
     "supertest": "^4.0.2"
   },
   "jest": {
